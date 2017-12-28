@@ -21,12 +21,20 @@ udp 127.0.0.1/32 20
 
 O decodificador é de uso único: ele lê todos os bytes do `stdin` e, quando a entrada fecha, produz a resposta.
 
-Para maior facilidade, em posse de um logfile com comandos Mirai, rode o utilitário `decoder`:
+Para maior facilidade, em posse de um logfile com comandos Mirai codificados, rode o utilitário `decoder` para obter um logfile legível:
 
-```bash 
+```bash
 $ python decoder.py logfile > logfile-decoded
 ```
 
+Outro utilitário, o `mirai_logfile`, faz o parsing dos logfiles em texto pleno, como no exemplo:
+
+```python
+from mirai_logfile import parse_file
+
+for date, cnc, cmds, targets, duration, options in parse_file('logfile-decoded'):
+    print date, cnc, cmds, targets, duration, options
+```
 
 ## Encoder
 O codificador é baseado no código em Go que roda no servidor de Comando e Controle, recebendo comandos em texto pleno do operador, traduzindo-os para binário e encaminhando para os bots.
