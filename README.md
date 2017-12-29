@@ -6,7 +6,7 @@ Codificador/decodificador de bytes Mirai usando trechos seletos do código-fonte
 Apenas rode o `make` no diretório principal para compilar ambos os módulos:
 
  - `a2b` (attack to binary) - recebe uma instrução de ataque e codifica em bytes;
- - `b2a` (binary to attack) - recebe bytes da e decodifica em uma instrução de ataque.
+ - `b2a` (binary to attack) - recebe bytes e decodifica em uma instrução de ataque.
 
 
 ## Decoder
