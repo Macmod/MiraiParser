@@ -23,7 +23,7 @@ def parse_file(fname):
                 date = datetime.strptime(date_, '%Y-%m-%d %H:%M:%S')
                 duration = int(duration_)
                 options = {}
-                if options_ != '':
+                if options_:
                     for opt in options_.split(' '):
                         data = opt.split('=')
                         key = data[0]
